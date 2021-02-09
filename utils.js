@@ -9,7 +9,11 @@ module.exports.checkArgs = () => {
         txt: false
     }
     if (!arr.length) {
-        obj.json = true
+        console.log(`Please provide an argument... 
+--json      Export as JSON
+--md        Export as Markdown
+--txt       Export as txt`)
+        process.exit()
     }
     for (let arg of arr) {
         switch (arg) {

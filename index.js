@@ -5,7 +5,18 @@ const Clippings = require('./utils')
 // parse args
 const args = Clippings.checkArgs()
 // import file
-const txt = fs.readFileSync('./My Clippings.txt', 'utf8')
+
+const txt = (() => {
+    let file
+    try {
+        file = fs.readFileSync('./My Clippings.txt', 'utf8')
+    }
+    catch {
+        console.log('No \'My Clippings.txt\' file present in the root directory.')
+        process.exit()
+    }
+    return file
+})()
 // split by highlight
 const arr = txt.split('==========').filter(r => r !== '\r\n')
 // parse to object
