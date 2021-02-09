@@ -29,7 +29,7 @@ let json = arr.map((hl, i) => {
     let pageNumber = parseInt(date[5].split('-')[0])
     date = new Date(`${date[date.length - 3]} ${date[date.length - 4]}, ${date[date.length - 2]} ${date[date.length - 1]}`)
     return {
-        title: item[1],
+        title: item[1].trim(),
         date,
         pageNumber,
         authors: item[3],
