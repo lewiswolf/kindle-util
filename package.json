@@ -1,0 +1,16 @@
+{
+	"name": "kindle-clippings",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js --json --txt --md",
+		"json": "node index.js --json",
+		"txt": "node index.js --txt",
+		"md": "node index.js --md",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
