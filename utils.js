@@ -48,6 +48,8 @@ module.exports.sortByBook = (json) => {
     return newObj
 }
 
+module.exports.exportJSON = (json) => fs.writeFileSync('./output/my-clippings.json', JSON.stringify(json, null, 2))
+
 module.exports.exportMD = (json) => {
     for (let key of Object.keys(json)) {
         let arr = json[key]

@@ -4,8 +4,8 @@ const Clippings = require('./utils')
 
 // parse args
 const args = Clippings.checkArgs()
-// import file
 
+// import file
 const txt = (() => {
     let file
     try {
@@ -17,8 +17,10 @@ const txt = (() => {
     }
     return file
 })()
+
 // split by highlight
 const arr = txt.split('==========').filter(r => r !== '\r\n')
+
 // parse to object
 let json = arr.map((hl, i) => {
     let item = hl.split('\r\n')
@@ -34,9 +36,11 @@ let json = arr.map((hl, i) => {
         content: item[4]
     }
 })
+
 // organise by book
 json = Clippings.sortByBook(json)
 
-args.json && fs.writeFileSync('./output/my-clippings.json', JSON.stringify(json, null, 2))
+// export everything
+args.json && Clippings.exportJSON(json)
 args.md && Clippings.exportMD(json)
 args.txt && Clippings.exportTXT(json)
