@@ -14,13 +14,13 @@ To export your citations as a .json:
 npm run json
 ```
 
-To export your citations as a .md:
+To export your citations as a .md (one for each book):
 
 ```bash
 npm run md
 ```
 
-To export your citations as a .txt:
+To export your citations as a .txt (one for each book):
 
 ```bash
 npm run txt
