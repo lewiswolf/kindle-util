@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
+		"start": "node index.js -j -m -t",
 		"json": "node index.js --json",
 		"txt": "node index.js --txt",
 		"md": "node index.js --md",

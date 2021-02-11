@@ -36,16 +36,35 @@ module.exports.checkArgs = () => {
     return obj
 }
 
+module.exports.file2JSON = (file) => {
+    let arr = file.split('==========').filter(r => r !== '\r\n')
+    let json = arr.map((item, i) => {
+        item = item.split('\r\n')
+        i === 0 && item.unshift('')
+        let date = item[2].split(' ')
+        let pageNumber = parseInt(date[5].split('-')[0])
+        date = new Date(`${date[date.length - 3]} ${date[date.length - 4]}, ${date[date.length - 2]} ${date[date.length - 1]}`)
+        return {
+            title: item[1].trim(),
+            date,
+            pageNumber,
+            authors: item[3],
+            content: item[4]
+        }
+    })
+    return json
+}
+
 module.exports.sortByBook = (json) => {
-    let newObj = {}
+    let obj = {}
     for (let item of json) {
-        if (Object.keys(newObj).indexOf(item.title) < 0) {
-            newObj[item.title] = [{ date: item.date, pageNumber: item.pageNumber, content: item.content }]
+        if (Object.keys(obj).indexOf(item.title) < 0) {
+            obj[item.title] = [{ date: item.date, pageNumber: item.pageNumber, content: item.content }]
         } else {
-            newObj[item.title].push({ date: item.date, pageNumber: item.pageNumber, content: item.content })
+            obj[item.title].push({ date: item.date, pageNumber: item.pageNumber, content: item.content })
         }
     }
-    return newObj
+    return obj
 }
 
 module.exports.exportJSON = (json) => fs.writeFileSync('./output/my-clippings.json', JSON.stringify(json, null, 2))
