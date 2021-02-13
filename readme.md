@@ -29,7 +29,7 @@ npm run txt
 Or to export all three:
 
 ```bash
-npm start -j -m -t
+npm start
 ```
 
 Collect your rewards from `./output`.
