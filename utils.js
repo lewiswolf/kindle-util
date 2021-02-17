@@ -75,7 +75,7 @@ module.exports.exportMD = (json) => {
         arr = arr.sort((a, b) => a.pageNumber > b.pageNumber || b.date - a.date);
         let md = ''
         for (let quote of arr) {
-            md += `Page ${quote.pageNumber}:   
+            md += `<span style="color:lightcoral">Page ${quote.pageNumber}</span>:   
     ${quote.content} \n\n`
         }
         fs.writeFileSync(`./output/${key}.md`, md)
