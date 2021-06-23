@@ -1,5 +1,5 @@
 'use strict'
-const Clippings = require('./utils')
+const Clippings = require('./src/utils')
 const args = Clippings.checkArgs()
 
 let json = Clippings.file2JSON('./input/My Clippings.txt')
