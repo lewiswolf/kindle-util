@@ -1,28 +1,17 @@
 'use strict'
-const fs = require('fs')
+/*
+Converts a My Clippings.txt file into a JSON, markdown or .txt file.
+*/
 const Clippings = require('./utils')
 
 // parse args
 const args = Clippings.checkArgs()
 
 // import file
-const txt = (() => {
-    let file
-    try {
-        file = fs.readFileSync('./My Clippings.txt', 'utf8')
-    }
-    catch {
-        console.log('No \'My Clippings.txt\' file present in the root directory.')
-        process.exit()
-    }
-    return file
-})()
-
-// parse to object
-let json = Clippings.file2JSON(txt)
+let json = Clippings.file2JSON('./input/My Clippings.txt')
 
 // organise by book
-json = Clippings.sortByBook(json)
+json = Clippings.organiseHighlights(json)
 
 // export everything
 args.json && Clippings.exportJSON(json)
