@@ -6,7 +6,7 @@ I tried using a few repos to organise my Kindle quotations but most are outdated
 
 ## Usage
 
-Put your _My Clippings.txt_ file in the _input_ directory.
+Put your _My Clippings.txt_ file in the `./input` directory.
 
 To export your citations as a .json:
 
