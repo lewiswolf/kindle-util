@@ -41,7 +41,7 @@ module.exports.file2JSON = (filepath) => {
 	/*
 	Imports a MyClippings.txt file and converts
 	the metadata for each highlighted section into 
-	JSON format. Returns an array of JSON objects. 
+	JSON format. Returns an array of objects. 
 	*/
 
 	// import file
@@ -82,8 +82,8 @@ module.exports.organiseHighlights = (json) => {
 			hightlight 1, hightlight 2, ...
 		]
 	}
-	and then organises the individual highlights by pagenumber,
-	and date. 
+	and then organises the individual highlights by
+	pagenumber, and date. 
 	*/
 
 	let obj = {}
@@ -124,7 +124,7 @@ module.exports.exportMD = (json) => {
 
 module.exports.exportTXT = (json) => {
 	/*
-	Exports a stylised text file generated from a JSON.
+	Exports a stylised txt file generated from a JSON.
 	*/
 
 	for (let key of Object.keys(json)) {
