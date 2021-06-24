@@ -4,11 +4,11 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js -j -m -t",
+		"dump": "node index.js --json --md --txt",
 		"json": "node index.js --json",
 		"txt": "node index.js --txt",
 		"md": "node index.js --md",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"highlight": "node index.js --json --highlight"
 	},
 	"keywords": [],
 	"author": "",

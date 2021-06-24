@@ -11,7 +11,8 @@ module.exports.checkArgs = () => {
 	let settings = {
 		json: false,
 		md: false,
-		txt: false
+		txt: false,
+		highlight: false,
 	}
 	const args = process.argv.slice(2)
 
@@ -29,6 +30,10 @@ module.exports.checkArgs = () => {
 			case '--txt':
 			case '-t':
 				settings.txt = true
+				break
+			case '--highlight':
+			case '-h':
+				settings.highlight = true
 				break
 			default:
 				break
