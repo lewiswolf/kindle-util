@@ -12,5 +12,8 @@
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"pdfreader": "^1.2.10"
+	}
 }

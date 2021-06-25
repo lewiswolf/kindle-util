@@ -8,5 +8,8 @@ json = Utils.organiseHighlights(json)
 
 args.json && Utils.exportJSON(json)
 args.md && Utils.exportMD(json)
-args.txt && Utils.exportTXT(json)
-args.highlight && Highlight(json)
+args.txt && Utils.exportTXT(json);
+
+(async () => {
+	args.highlight && await Highlight(json)
+})()
